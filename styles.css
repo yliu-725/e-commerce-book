@@ -132,8 +132,10 @@ button:active {
     border: none;
 }
 
-.header__image--wrapper {
-    padding: 20px;
+.header__image--wrapper img{
+    width: 100%;
+    max-width: 400px;
+    height: auto;
 }
 
 /* Features section */
