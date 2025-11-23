@@ -132,7 +132,7 @@ button:active {
     border: none;
 }
 
-.header__image--wrapper img{
+.header__image--wrapper {
     width: 100%;
     max-width: 400px;
     height: auto;
