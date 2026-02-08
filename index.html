@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,6 +10,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="app.js" defer></script>
+    <script src="book.js" defer></script>
   </head>
   <body>
     <section id="landing">
@@ -18,13 +19,13 @@
           <img class="logo" src="./assets/Library.svg" alt="library logo" />
           <ul class="nav__links">
             <li>
-              <a href="#" class="nav__link">Home</a>
+              <a href="#landing" class="nav__link">Home</a>
             </li>
             <li>
-              <a href="#" class="nav__link">Contact</a>
+              <a href="#" class="nav__link no-cursor">Contact</a>
             </li>
             <li>
-              <a href="#" class="nav__link nav__link--primary">Books</a>
+              <a href="#features" class="nav__link nav__link--primary">Books</a>
             </li>
           </ul>
           <button class="btn__menu" onclick="openMenu()">
@@ -36,13 +37,19 @@
             </button>
             <ul class="menu__links">
               <li class="menu__list">
-                <a href="#" class="menu__link" onclick="closeMenu()">Home</a>
+                <a href="#landing" class="menu__link" onclick="closeMenu()"
+                  >Home</a
+                >
               </li>
               <li class="menu__list">
-                <a href="#features" class="menu__link" onclick="closeMenu()">Books</a>
+                <a href="#" class="menu__link no-cursor" onclick="closeMenu()"
+                  >Contacts</a
+                >
               </li>
               <li class="menu__list">
-                <a class="menu__link no-cursor" onclick="closeMenu()">Contact</a>
+                <a href="#features" class="menu__link" onclick="closeMenu()"
+                  >Books</a
+                >
               </li>
             </ul>
           </div>
@@ -55,7 +62,9 @@
             <h2>
               Find your dream book with <span class="purple">Library</span>
             </h2>
-            <button class="btn">Browse books</button>
+            <a href="#features">
+              <button class="btn">Browse books</button>
+            </a>
           </div>
           <figure class="header__image--wrapper">
             <img src="./assets/Undraw_Books.svg" alt="landing page photo" />
@@ -107,9 +116,17 @@
       <section id="features">
         <div class="container">
           <div class="row">
-            <h2 class="section__title">
-              Featured <span class="purple">Books</span>
-            </h2>
+            <div class="books__header">
+              <h2 class="section__title books__header--title">
+                Featured <span class="purple">Books</span>
+              </h2>
+              <select id="filter">
+                <option value="" disabled selected>Sort</option>
+                <option value="LOW_To_HIGH">Price, Low to High</option>
+                <option value="HIGH_To_LOW">Price, High to Low</option>
+                <option value="RATING">Rating</option>
+              </select>
+            </div>
             <div class="books">
               <div class="book">
                 <figure class="book__image--wrapper">
@@ -198,9 +215,11 @@
       <section id="recent">
         <div class="container">
           <div class="row">
-            <h2 class="section__title">
-              Latest <span class="purple">Books</span>
-            </h2>
+            <div class="books__header">
+              <h2 class="section__title books__header--title">
+                Latest <span class="purple">Books</span>
+              </h2>
+            </div>
             <div class="books">
               <div class="book">
                 <figure class="book__image--wrapper">
@@ -370,7 +389,9 @@
         <div class="container">
           <div class="row row__column">
             <h2 class="section__title">Explore More <span>Books</span></h2>
-            <button class="btn">Browse Books</button>
+            <a href="#features">
+              <button class="btn">Browse books</button>
+            </a>
           </div>
         </div>
       </section>
@@ -379,7 +400,7 @@
     <footer>
       <div class="container">
         <div class="row row__column">
-          <a href="#">
+          <a href="#landing">
             <figure class="footer__logo">
               <img
                 class="footer__logo--img"
@@ -389,9 +410,9 @@
             </figure>
           </a>
           <div class="footer__links">
-            <a href="#" class="footer__link">Home</a>
+            <a href="#landing" class="footer__link">Home</a>
             <a href="#" class="footer__link no-cursor">About</a>
-            <a href="#" class="footer__link">Books</a>
+            <a href="#features" class="footer__link">Books</a>
             <a href="#" class="footer__link no-cursor">Contact</a>
           </div>
           <div class="footer__copyright">Copyright © 2025 Library</div>
