@@ -1,7 +1,30 @@
 function renderBooks() {
-  
+  const booksWrapper = document.querySelector(".books");
+
+  const books = getBooks();
+  booksWrapper.innerHTML =
+  `<div class="book">
+    <figure class="book__image--wrapper">
+      <img class="book__img"
+        src="${books[0].url}"
+        alt="book cover"
+      />
+    </figure>
+    <div class="book__title">${books[0].title}</div>
+      <div class="book__ratings">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+    </div>
+    <div class="book__price">
+      <span class="book__price--normal">$${books[0].originalPrice}</span>$${books[0].salePrice}
+    </div>
+</div>`;
 }
 
+renderBooks();
 
 // FAKE DATA
 function getBooks() {
