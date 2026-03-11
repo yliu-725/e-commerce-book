@@ -24,7 +24,6 @@ function renderBooks() {
   </div>`
 }
 
-
 renderBooks();
 
 // FAKE DATA
